@@ -1,0 +1,36 @@
+#Autenticacion
+
+    El mecanismo ##HTTP Basic## codifica el usuario y el password con Base64 (usuario:password).
+
+    El mecanismo ##HTTP Digest## utiliza MD5 para cifrar los hashes de usuario, clave y realm.
+
+
+#HTTP Basic
+
+Mecanismo sencillo para implementar autenticacion basica sobre recursos HTTP.
+
+Ventajas:
+        Facilidad de implementacion
+
+Desventajas:
+        El problema es que el texto viaja plano y bastaria con decodificar en formato Base64 para obtener las credenciales.
+
+
+La autenticacion de acceso basica asume que el cliente se identificara mediante usuario y contrasenia, 
+
+Cuando el cliente accede inicialmente a un sitio que utiliza este sistema, el sitio replica una respuesta tipo 401 que contiene la etiqueta:
+'WWW-Authenticate", con el valor de "Basic" y el nombre del dominio protegido.
+
+El navegador del cliente responde con una etiqueta "Authorization" que contiene el valor "Basic" y la concatenacion en Base64 del login (usuario:password)
+
+
+#HTTP Digest
+
+Es un mecanismo utilizado para mejorar el proceso de autenticacion basico en HTTP. Se utiliza MD5 para cifrar la informacion del usuario, clave y realm.
+Aunque tambien puede utilizar otros algoritmos como SHA en sus distintas variables para mejorar la seguridad.
+
+Procedimiento:
+
+        >>Hash1 = MD5("user:realm:password")
+        >>Hash2 = MD5("HTTP-Method-URI)
+        >>Response = MD5(Hash1:Nonce:Hash2)

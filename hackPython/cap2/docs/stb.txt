@@ -1,0 +1,10 @@
+#stb  "Security Tools Builder"
+
+    ->Libreria que permite la creación de proyectos de seguridad o hacking muy fácilmente.
+
+    Genera toda la estructura automáticamente llamando "stb" en la terminal.
+
+    Se puede installar como librería global por medio de >>>python setup.py install
+    Dentro de la carpeta nombreproyecto_lib/ se encuentra el api.py, En este archivo puedo generar el código que utilizará mi app.
+
+    Para correr el código, se puede ejecutar el archivo nombreproyecto_lib/nombreproyecto.py

@@ -1,0 +1,6 @@
+Permite obtener los datos de una IP a partir de las bases de datos de GeoIP
+Datos como:
+    Codigo de pais, zona horaria.
+
+Instalacion: 
+    pip install geoip2

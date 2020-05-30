@@ -1,0 +1,28 @@
+#requests
+
+Librería más alto nivel que httplib y urllib que permite el manejo de conexiones, peticiones por http .
+
+Básicamente es un wraper de urllib2 junto con otros módulos que permiten facilitar el proceso con métodos como:
+'post', 'get', 'put', 'patch', 'delete', 'head', 'options'
+
+
+Instalación:
+        -> pip install requests.
+
+
+Ejemplo:
+        -> response = requests.get("http://www.google.com")
+
+        ----> El método devuelve un objeto del tipo response.
+
+            -> Algunos de sus atributos son:
+                    -> response.status_code
+                    -> response.content
+                    -> response.json()
+
+
+Ventajas:
+        -> Soporta todos los métodos de HTTP.
+        -> Está escrita completamente en python.
+        -> Permite Pooling, integración de sitios web, codificación de POST en formularios.
+

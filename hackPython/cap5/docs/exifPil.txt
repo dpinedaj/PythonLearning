@@ -1,0 +1,2 @@
+Con PIL.ExifTags es posible obtener metadatos utiles de imagenes, como la localizacion y mas.
+    informacion de gps

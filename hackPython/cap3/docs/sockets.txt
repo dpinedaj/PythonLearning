@@ -1,0 +1,40 @@
+#SOCKET
+
+    ->Servicios para enviar mensajes a través de la red, generan una forma de comunicación intra procesos (IPC)
+    La red puede ser lógica, local a pc, o conexión física a una red externa.
+
+    Permiten implementar la arquitectura cliente-servidor, la comunicación debe ser iniciada por uno de los programas que se 
+    denomina programa 'cliente', el segundo espera a que otro inicie la comunicación, este se llama 'servidor'
+
+    -> Creación de un socket.
+
+        >>>import socket
+        >>>s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  #Se inicializa el socket con conexión INET
+
+        >>>s.connect(('www.mcmillan-inc.com', 80)) #Se le pasa al socket la dirección y el ip a conectarse del servidor.
+
+
+    Modelo cliente servidor:
+    -> Este modelo es usado para la comunicación, paradigma en sistemas de redes.
+    un servidor se comunica con múltiples clientes, el cliente debe conocer la existencia
+    y el ip:puerto del mismo, pero el servidor no debe conocer al cliente antes de la conexión.
+
+
+    UDP ( USER DATAGRAM PROTOCOL ):
+        -> Protocolo simple, la aplicación escribe un mensaje a un socket de UDP,
+        este se encapsula en un diagrama de UTP, luego en un diagrama de IP, y esto se
+        envía a su destino.
+
+        Su desventaja es que no tiene fiabilidad ya que no se puede asegurar que
+        los datos lleguen completamente.
+
+
+    TCP ( Procolo de control de transmision):
+        -> Permite la conexión basada en el modelo cliente-servidor, cuando el cliente
+        envía datos al servidor, el cliente requiere una respuesta del servidor de que los
+        datos llegaron.
+
+    
+
+    
+

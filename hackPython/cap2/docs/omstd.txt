@@ -1,0 +1,22 @@
+#Metodología OMSTD
+    -> Open methodology for security tool developers,
+    Es una propuesta que intenta ser una guía de buenas prácticas fácil, 
+    intuitiva y práctica, para el desarrollo de aplicaciones de hacking.
+
+    Documentacion : https://omstd.readthedocs.io/
+
+    Repositorio : https://github.com/cr0hn/omstd/
+
+
+    Conceptos:
+        
+        Corrutina:
+            Una corrutina es una compontente (función, clase o método) 
+            capaz de suspender su ejecución hasta recibir un cierto estímulo.
+
+            Se generan con la librería asyncio
+
+            aiohttp: Librería que facilita el manejo de conexiones http
+
+ 
+

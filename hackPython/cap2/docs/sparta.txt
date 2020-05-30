@@ -1,0 +1,16 @@
+#Sparta
+    -> Herramienta para hacer pruebas de seguridad en las fases de exploración y enumeración
+        Tiene interfaz gráfico que permite utilizar más fácilmente.
+
+        -Permite hacer la penetración de redes
+
+
+
+    Instalación:
+        sudo apt install nmap hydra cutycapt
+
+        sudo apt install python-elixir python-qt4
+
+        git clone https://github.com/secforce/sparta.git -b dev
+
+        python sparta/sparta.py      ##Python2.7

@@ -1,0 +1,8 @@
+#argparse
+    -> Librería que facilita el manejo de parámetros ingresador por terminal.
+
+    Clases: 
+        parser = argparse.ArgumentParser()
+    Métodos: 
+        parser.add_argument()
+        parser.parse_args()

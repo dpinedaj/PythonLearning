@@ -1,0 +1,6 @@
+#urllib
+
+entre urllib, urllib2 y urllib3 permiten el manejo de interacciones con servidores y proxies http.
+
+El módulo urllib3 permite la generación de un PoolManager para reutilizar conexiones, y unadministrador de
+conexiones para gestionar permisos de determinados dominios.

@@ -1,0 +1,11 @@
+fuzzDB:
+    Project with a list of common faults results after injection testing.
+    docs:
+        https://github.com/fuzzdb-project
+
+PyWebFuzz:
+    Dentro de la librería se encuentran los diferentes esquemas de ataque disponibles.
+    Las clases se encargan de leer los ficheros dentro de la documentacion y permite utilizar
+    nuestros scripts.
+
+    Instalacion: pip install git+https://github.com/disassembler/pywebfuzz.git

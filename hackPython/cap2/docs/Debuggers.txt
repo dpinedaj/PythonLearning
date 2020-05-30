@@ -1,0 +1,28 @@
+## pydbg
+    ->Pydbg es un debugger que permite ejecutar un programa y estudiar
+    todas las acciones que realiza en el sistema, pudiendo definir los breakpoints, hooks y más.
+
+    -->> Requiere:
+                ->PaiMei
+                ->ctypes
+
+
+#PyCommand:
+
+    ->Análisis de códigos maliciosos y exploits, automatización de tareas, además permite escribir
+    scripts para tareas puntuales.
+
+    Se inicializa con python3 -m pycommand init.    Pedirá un nombre i.e: debugger
+
+    Y al generar el archivo se corre con debugger -f filename.py command  <args>
+
+    -->> Casos de uso:
+                ->Sripts para ocultar debugger
+                ->Búsqueda de rutinas de encriptación.
+                ->Detección de packers.
+                ->Definir breakpoints
+
+#IDAPython
+
+    -> Desensamblador empleado para ingeniería inversa, Utiliza referencias cruzadas entre las secciones de
+    un código, llamadas del API y más información

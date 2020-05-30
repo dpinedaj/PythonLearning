@@ -1,0 +1,11 @@
+#SQLmap
+
+    -> Herramienta para detectar por medio de GET - POST si hay vulnerabilidades
+      de SQL en un URL dado.
+
+
+    repositorio: https://github.com/sqlmapproject/sqlmap
+
+
+
+    uso: python3 sqlmap.py <URL>   #También puede usarse python2.7

@@ -1,0 +1,23 @@
+DNS:
+    El protocolo de DNS "Domain Name Server" se utiliza para:
+        Asignar rango de ips a un dominio
+        Resolución de nombres:  obtener una ip con un nombre dado
+                                obtener un nombre con una ip dada
+        Servidores de correo
+
+
+Tipos de registro de consulta:
+
+    A -> consulta direccion IPv4
+    AAAA -> consulta direccion IPv6
+    MX -> consulta sevidores de correo
+    NS -> consulta nombre del servidor
+    TXT -> consulta informacion en formato texto
+
+DNSPython:
+    Librería que permite hacer operaciones de consulta de DNS
+
+    Documentacion: https://www.dnspython.org
+
+    Instalación: pip install dnspython
+    

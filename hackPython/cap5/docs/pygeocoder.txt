@@ -1,0 +1,6 @@
+utiliza los servicios de Google Geocoding API para recuperar las coordenadas de una direccion concreta
+
+Instalacion: 
+    pip install pygeocoder
+
+    

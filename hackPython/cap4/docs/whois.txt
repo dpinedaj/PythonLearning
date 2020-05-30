@@ -1,0 +1,9 @@
+Python whois
+    Librería que permite ver quién es el propietario registrado del nombre de dominio
+
+documentacion:
+    https://pypi.python.org/pypi/python-whois
+
+instalación:
+    pip install pythonwhois
+

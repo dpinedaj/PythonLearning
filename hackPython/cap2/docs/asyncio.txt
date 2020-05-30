@@ -1,0 +1,35 @@
+#Asyncio:
+
+    -> Conceptos:
+            -> Concurrencia: Pueden haber varios hilos corriendo en un solo núcleo
+                Las instrucciones pueden ir intercaladas pero solo 1 hilo está realizando
+                proceso en algún momento.
+            -> Paralelismo: Se pueden tener varios hilos corriendo en varios núcleos de una CPU.
+            ----->Paralelismo implica concurrencia, pero no viceversa
+
+            -> Asincrónico: Se lanza una tarea, pero mientras no se obtenga el valor deseado de esa tarea,
+                El programa puede ir ejecutando otras tareas en vez de esperar.
+            ----->Un proceso Asincrónico implica concurrencia
+
+    -> Asincio:
+            -> Librería que genera una sincronía entr Event loop, tasks y corrutinas.
+
+        -> Event Loop:
+            -> Es el orquestador, corre las tareas una después de la otra, solo puede haber 
+                una tarea corriendo a la vez.
+            -> Cuando una tarea del loop se ve detenida por errores en conexión, bloqueo o algún
+                motivo, el Event Loop le da la oportunidad a otra tarea de correr en su lugar.
+        
+        -> Subrutinas:
+            -> Es la función o método definido, se puede invocar varias veces, pero no guarda su estado
+                entre llamados, cada llamado es un proceso nuevo.
+        -> Corutinas:
+            -> Son tareas coordinadas, que le dan el poder al Event Loop cuando no tienen nada útil que hacer.
+            -> A diferencia de las subrutinas, una corutina guarda su estado entre ejecuciones. Cuando una corutina
+                devuelve su estado (yield), solo pausa su ejecución hasta un nuevo llamado.
+            -> La corutina es la única que puede pausarse a si misma, con el método (await) 
+
+        -> Futures:
+            -> Objetos que representan el resultado de una tarea de lo que podría o no podría ser ejecutado.
+        
+        

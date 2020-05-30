@@ -1,0 +1,6 @@
+##PROXY:
+
+
+Un servidor proxy se usa como puente entre el origen y destino de una solicitud.
+
+    Sirve para control de acceso, filtrado de contenido y almacenamiento de caché.

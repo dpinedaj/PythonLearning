@@ -1,0 +1,38 @@
+Librería que permite utilizar el motor de busqueda shodan:
+
+
+Shodan se encarga de rastrear servidores y diversos tipos de dispositivos en 
+internet (por ejemplo, cámaras ip), extrayendo información útil sobre servicios que se
+encuentran en ejecución en dichos objetivos.
+
+Shodan no busca contenido web sino información entre las cabeceras de peticiones http.
+
+
+"Es conocido como el google de los hackers"
+
+Se debe solicitar una API_KEY desde la página shodan https://developer.shodan.io
+
+instalación:
+    pip install shodan
+
+API rest:
+    https://developer.shodan.io/api
+
+Filtros de shodan:
+    Permiten optimizar los resultados:
+    Algunos filtros:
+        fecha
+        pais
+        ciudad
+        geolocalizacion
+        hostname
+        net
+        os
+        port
+
+Benners de servidores:
+    Otro uso muy común es verificar si el nombre del servidor o alguna información
+    como el tipo de tecnología backend, su versión están expuestos.
+    Se puede utilizar por medio de sockets generando la conexión a dicho servidor.
+
+    

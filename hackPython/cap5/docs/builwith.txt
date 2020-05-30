@@ -1,0 +1,4 @@
+Su funcion es detectar el tipo de tecnologia que fue utilizada para construir un sitio web.
+
+instalacion:
+    pip install builtwith

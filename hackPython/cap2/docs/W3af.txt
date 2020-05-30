@@ -1,0 +1,49 @@
+Concepto:
+
+    Pentesting:
+
+            ->Consiste en atacar un sistema informático para identificar fallos, vulnerabilidades y demás errores de seguridad.
+
+            -> De caja blanca: Sabemos todo acerca del sistema, este método parte de un análisis integral, evalúa toda la infraestructura.
+            Al disponer de tanta información se realiza por miembros propios de TI de la empresa.
+
+            -> De caja negra: No disponemos de ningún tipo de información, Es una prueba a ciegas y es el más cercano a un ataque externo.
+
+            -> De caja gris, se tiene algo de información, se tendrán vulnerabilidades y amenazas en base a la cantidad de información.
+            Es el más recomendado.
+
+
+            Fases:
+
+            ->ISSAF(Information Systems Security Assessment Framework): Organizar la información al rededor de los criterios de evaluación.
+
+            ->PCI DSS(Payment Card Industry Data Security Standard): Es un método desarrollado por las empresas de tarjetas de débito y crédito.
+                sirve como guía para empresas que procesan, almacenan y transmiten datos.
+
+            ->PTES (Penetration Testing Execution Standard): Modelo a seguir en los libros de aprendizaje de pentesting.
+
+            ->OSSTMM(Manual de Metodología Abierta de Testeo de Seguridad): Esquema de pentesting ordenado y eficiente.
+
+
+#W3af
+
+    ->Herramienta de auditoría web, permite automatizar las tareas repetitivas de pentesting.
+
+    El objetivo es crear un framework para encontrar y ejecutar vulnerabilidades en aplicaciones web.
+    Está escrito en Python por lo que es mopdificable y escalable.
+
+    --->> Funciona en:
+            CSRF
+            XPath Injection
+            WebDAV      
+            Buffer overflows
+            Extensiones de FrontPage
+            XSS
+            LDAP Injection
+            Remove File Inclusion
+
+
+    Uso:  git clone https://github.com/andresriancho/w3af.git -b develop
+            cd w3af/extras/docker/scripts
+            ./w3af_console_docker
+            

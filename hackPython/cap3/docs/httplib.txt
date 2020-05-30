@@ -1,0 +1,11 @@
+#httplib
+
+
+Este módulo define una clase que implementa el lado del cliente del protocolo http.
+
+    HTTP([host[,port]])
+
+    la clase acepta parámetros de host y puerto, host obligatorio y puerto opcional.
+
+    puerto HTTP por defecto (80).
+    

@@ -1,0 +1,4 @@
+Libreria para extraer datos de documentos pdf. 
+
+Instalacion:
+    pip install PyPDF2
