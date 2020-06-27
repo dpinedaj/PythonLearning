@@ -35,7 +35,7 @@ def guardar():
 
 	mb.showinfo("Información", "Los datos fueron guardados en el archivo.")
 
-    ###TODO----------------------------------Aún no se soluciona------------------------------------------------------
+    #TODO
 
 def escala_de_grises():
 
@@ -85,41 +85,41 @@ def pixeles_imagen(im):
 
 
 
-	
-#*----------------------------------------------------------Generar ventana----------------------------------------
-ventana1= Tk()
-ventana1.title("Procesador de imágenes")
-ventana1.config(bg="black")
-ventana1.geometry("1200x1000")
+if __name__ == "__main__":	
+	#*----------------------------------------------------------Generar ventana----------------------------------------
+	ventana1= Tk()
+	ventana1.title("Procesador de imágenes")
+	ventana1.config(bg="black")
+	ventana1.geometry("1200x1000")
 
 
-menubarra = Menu(ventana1)
-ventana1.config(menu = menubarra)
+	menubarra = Menu(ventana1)
+	ventana1.config(menu = menubarra)
 
 
-menuarchivo = Menu(menubarra)
-menuarchivo.add_command(label="Abrir", command= abrir)
-menuarchivo.add_command(label="Guardar", command= guardar)
-menuarchivo.add_separator()
-menuarchivo.add_command(label="Salir", command= salir)
-menubarra.add_cascade(label="Archivo", menu=menuarchivo)
+	menuarchivo = Menu(menubarra)
+	menuarchivo.add_command(label="Abrir", command= abrir)
+	menuarchivo.add_command(label="Guardar", command= guardar)
+	menuarchivo.add_separator()
+	menuarchivo.add_command(label="Salir", command= salir)
+	menubarra.add_cascade(label="Archivo", menu=menuarchivo)
 
-Frame1= Frame(ventana1,width=540,height=340)
-Frame1.place(x=50,y=200)
-Frame1.config(bd=20,relief="groove",cursor="hand2")
+	Frame1= Frame(ventana1,width=540,height=340)
+	Frame1.place(x=50,y=200)
+	Frame1.config(bd=20,relief="groove",cursor="hand2")
 
-Frame2= Frame(ventana1,width=540,height=340)
-Frame2.place(x=610,y=200)
-Frame2.config(bd=20,relief="sunken",cursor="hand2")
-
-
-Botongris = Button(ventana1,command=escala_de_grises,bg="gray",text="GRISES")
-Botongris.place(x=50,y=50,height=100,width=100)
-	
+	Frame2= Frame(ventana1,width=540,height=340)
+	Frame2.place(x=610,y=200)
+	Frame2.config(bd=20,relief="sunken",cursor="hand2")
 
 
+	Botongris = Button(ventana1,command=escala_de_grises,bg="gray",text="GRISES")
+	Botongris.place(x=50,y=50,height=100,width=100)
 
 
 
-ventana1.mainloop()
+
+
+
+	ventana1.mainloop()
 
