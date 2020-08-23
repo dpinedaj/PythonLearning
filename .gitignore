@@ -4,3 +4,4 @@ venv2
 env
 .metals
 __pycache__
+.idea
