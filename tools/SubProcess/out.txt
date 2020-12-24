@@ -1,0 +1,31 @@
+ El volumen de la unidad G es Google Drive File Stream
+ El número de serie del volumen es: 1983-1116
+
+ Directorio de G:\Mi unidad\Programación\Python\Pruebas Subprocess
+
+05/01/2020  09:51    <DIR>          .
+02/01/2020  07:53    <DIR>          ..
+05/01/2020  09:39                94 SpRun.py
+30/12/2019  23:34             2,134 keylogger.pyw
+05/01/2020  09:32                87 osPopen.py
+05/01/2020  09:51               381 SpPopen.py
+05/01/2020  09:46               177 out.txt
+               5 archivos          2,873 bytes
+               2 dirs  78,347,509,760 bytes libres
+
+
+
+30/12/2019  23:34             2,134 keylogger.pyw
+05/01/2020  09:57    <DIR>          .
+05/01/2020  09:57               634 SpPopen.py
+05/01/2020  09:57               600 out.txt
+05/01/2020  09:39                94 SpRun.py
+05/01/2020  09:32                87 osPopen.py
+02/01/2020  07:53    <DIR>          ..
+ El volumen de la unidad G es Google Drive File Stream
+ El número de serie del volumen es: 1983-1116
+ Directorio de G:\Mi unidad\Programación\Python\Pruebas Subprocess
+               5 archivos          3,549 bytes
+               2 dirs  78,346,653,696 bytes libres
+
+
