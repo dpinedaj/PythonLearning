@@ -1,0 +1,4 @@
+
+# TO RUN AN APP
+$ export QUART_APP=hello-world:app
+$ quart run

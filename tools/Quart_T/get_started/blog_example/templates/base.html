@@ -1,0 +1,10 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='blog.css') }}">
+<title>Blog</title>
+<h1><a href="{{ url_for('posts') }}">Blog</a></h1>
+{% for message in get_flashed_messages() %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+<div class="content">
+    {% block content %} {% endblock %}
+</div>

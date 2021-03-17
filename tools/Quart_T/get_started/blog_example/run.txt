@@ -1,0 +1,13 @@
+
+
+set QUART_APP=blog:app
+
+
+# To init database
+quart init_db
+
+# To run app
+quart run
+
+#To insert a simple post using the POST curl method
+curl -X POST -d "title=Blog Title&text=Text for the blog" localhost:5000/

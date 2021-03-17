@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<nav>
+    {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">Login</a> {% else %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <div class="posts">
+        {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>{{ post.text|safe }}
+        </div>
+        {% else %}
+        <div>No posts available</div>
+        {% endfor %}
+    </div>
+    <form action="{{ url_for('create') }}" method="post" class="create-post">
+        <p>Title:<input type="text" size="30" name="title">
+            <p>Text:<textarea name="text" rows="5" cols="40"></textarea>
+                <p><input type="submit" value="Post">
+                    </dl>
+    </form>
+    {% endif %}
+</nav>
+
+{% endblock %}
