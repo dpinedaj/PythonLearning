@@ -12,8 +12,7 @@ Bonus: Can you do this in one pass?
 """
 from typing import List, Callable
 
-problem1: Callable[[List[int], int], bool] = lambda values, compared: \
-                                                any(compared == i + j for i in values for j in values)
+problem1: Callable[[List[int], int], bool] = lambda values, compared: any(compared - i in values for i in values)
 
 # Testing
 assert(problem1([10, 15, 3, 7], 17) == True)
