@@ -35,7 +35,7 @@ def problem7(encoded: str) -> str:
     return ["".join(res) for res in result if None not in res]
     
 
-test = "1591"
+test = "1111"
 problem7(test)
 
 
