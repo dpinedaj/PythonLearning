@@ -1,4 +1,4 @@
-# Open Clouse Principle
+# Open Close Principle
 # Open for extension, closed for modification
 
 

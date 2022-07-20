@@ -34,16 +34,17 @@ class Square(Rectangle):
     def __init__(self, size):
         Rectangle.__init__(self, size, size)
     # Those methods directly violates the principle
+
     @Rectangle.width.setter
     def width(self, value):
         self._width = self._height = value
-    
+
     @Rectangle.height.setter
     def height(self, value):
         self._height = self._width = value
 
 
-def use_it(rc):
+def use_it(rc: Rectangle):
     w = rc.width
     rc.height = 10
     expected = int(w*10)
@@ -55,6 +56,8 @@ use_it(rc)
 
 sq = Square(5)
 use_it(sq)
+
+assert isinstance(sq, Rectangle)
 
 
 # A good Idea to solve this issue is just creating
