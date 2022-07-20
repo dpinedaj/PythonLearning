@@ -182,3 +182,90 @@ person = (
     .build()
 )
 print(person)
+
+
+# How to respect Open Close principle
+
+
+class Person:
+    def __init__(self):
+        self.name = None
+        self.position = None
+        self.date_of_birth = None
+
+    def __str__(self) -> str:
+        return f"{self.name} born on {self.date_of_birth} " +\
+            f"works as {self.position}"
+
+    @staticmethod
+    def new():
+        return PersonBuilder()
+
+
+class PersonBuilder:
+    def __init__(self):
+        self.person = Person()
+
+    def build(self):
+        return self.person
+
+
+class PersonInfoBuilder(PersonBuilder):
+    def called(self, name):
+        self.person.name = name
+        return self
+
+
+class PersonJobBuilder(PersonInfoBuilder):
+    def work_as_a(self, position):
+        self.person.position = position
+        return self
+
+
+class PersonBirthDateBuilder(PersonJobBuilder):
+    def born(self, date_of_birth):
+        self.person.date_of_birth = date_of_birth
+        return self
+
+
+pb = PersonBirthDateBuilder()
+me = (
+    pb
+    .called("Dimitri")
+    .work_as_a("Engineer")
+    .born("1/1/1980")
+    .build()
+)
+print(me)
+
+
+# Exercise
+
+class Code:
+    def __init__(self):
+        self.root_name = ""
+        self.fields = ""
+
+    def __str__(self):
+        return (
+            f"class {self.root_name}:"
+            f"\n  def __init__(self):"
+            f"{self.fields}"
+        )
+
+
+class CodeBuilder:
+    def __init__(self, root_name):
+        self.code = Code()
+        self.code.root_name = root_name
+
+    def add_field(self, type, name):
+        self.code.fields += f"\n    self.{type} = {name}"
+        return self
+
+    def __str__(self):
+        return str(self.code)
+
+
+cb = CodeBuilder("Person").add_field("name", '""').add_field("age", "0")
+print(cb)
