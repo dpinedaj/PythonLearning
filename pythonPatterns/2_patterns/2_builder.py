@@ -68,6 +68,12 @@ class HtmlBuilder:
             HtmlElement(child_name, child_text)
         )
 
+    def add_child_fluent(self, child_name, child_text):
+        self.__root.elements.append(
+            HtmlElement(child_name, child_text)
+        )
+        return self
+
     def __str__(self):
         return str(self.__root)
 
@@ -76,4 +82,12 @@ builder = HtmlBuilder("ul")
 builder.add_child("li", "hello")
 builder.add_child("li", "world")
 print("Ordinary Builder:")
+print(builder)
+
+
+# Also can be a fluent interface
+builder = HtmlBuilder("ul")
+builder.add_child_fluent("li", "hello")\
+    .add_child_fluent("li", "world")
+print("Fluent Builder:")
 print(builder)
