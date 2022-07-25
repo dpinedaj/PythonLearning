@@ -1,7 +1,15 @@
 from dependency_injector import containers, providers
 from dependency_injector.wiring import Provide, inject
 
+import os
 from unittest import mock
+
+
+class ApiClientDep:
+
+    def __init__(self):
+        self.api_key = os.getenv("API_KEY")  # <-- dependency issue
+        self.timeout = os.getenv("TIMEOUT")  # <-- dependency issue
 
 
 class ApiClient:
@@ -87,5 +95,3 @@ if __name__ == "__main__":
         main_photo=another_photo,
     )
     # Same as: # user3 = User(uid=3, main_photo=another_photo)
-
-    
