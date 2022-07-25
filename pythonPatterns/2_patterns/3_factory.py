@@ -18,7 +18,6 @@
 from abc import ABC
 from cmath import cos, sin
 from enum import Enum, auto
-from os import stat
 
 
 class CoorinateSystem(Enum):
