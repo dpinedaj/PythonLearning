@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-dependency-injector = "*"
+dependency-injector = {extras = ["pydantic"], version = "*"}
 
 [dev-packages]
 ipykernel = "*"
