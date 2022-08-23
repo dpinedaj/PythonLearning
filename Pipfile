@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 dependency-injector = {extras = ["pydantic"], version = "*"}
+black = "*"
 
 [dev-packages]
 ipykernel = "*"
