@@ -7,7 +7,7 @@
 arr = [1, 3, 2, 2]
 
 
-sorted_arr = sorted(arr) # [1, 2, 2, 3]
+sorted_arr = sorted(arr)  # [1, 2, 2, 3]
 sorted_arr[0] = 1
 for i in range(len(sorted_arr) - 1):
     diff = sorted_arr[i + 1] - sorted_arr[i]

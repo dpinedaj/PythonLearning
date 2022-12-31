@@ -1,5 +1,3 @@
-
-
 arr = [2, 4, 3]
 n = len(arr)
 result = [0]

@@ -1,296 +1,298 @@
 from tkinter import *
 
-raiz=Tk()
+raiz = Tk()
 
-miFrame=Frame(raiz)
+miFrame = Frame(raiz)
 
 miFrame.pack()
 
-operacion=""
+operacion = ""
 
-reset_pantalla=False
+reset_pantalla = False
 
-resultado=0
+resultado = 0
 
 
-#-------------pantalla---------------------------------------
+# -------------pantalla---------------------------------------
 
-numeroPantalla=StringVar()
+numeroPantalla = StringVar()
 
-pantalla=Entry(miFrame, textvariable=numeroPantalla)
+pantalla = Entry(miFrame, textvariable=numeroPantalla)
 pantalla.grid(row=1, column=1, padx=10, pady=10, columnspan=4)
 pantalla.config(background="black", fg="#03f943", justify="right")
 
 
-#-------------------pulsaciones teclado--------------------------
+# -------------------pulsaciones teclado--------------------------
+
 
 def numeroPulsado(num):
 
-	global operacion
+    global operacion
 
-	global reset_pantalla
+    global reset_pantalla
 
-	if reset_pantalla!=False:
+    if reset_pantalla != False:
 
-		numeroPantalla.set(num)
+        numeroPantalla.set(num)
 
-		reset_pantalla=False
+        reset_pantalla = False
 
-	else:
-	
-		numeroPantalla.set(numeroPantalla.get() + num)
+    else:
+
+        numeroPantalla.set(numeroPantalla.get() + num)
 
 
-#----------------funcion suma----------------------------------
+# ----------------funcion suma----------------------------------
+
 
 def suma(num):
 
-	global operacion
+    global operacion
 
-	global resultado
+    global resultado
 
-	global reset_pantalla
+    global reset_pantalla
 
-	resultado+=int(num) #resultado=resultado+int(num)
+    resultado += int(num)  # resultado=resultado+int(num)
 
-	operacion="suma"
+    operacion = "suma"
 
-	reset_pantalla=True
+    reset_pantalla = True
 
-	numeroPantalla.set(resultado)
+    numeroPantalla.set(resultado)
 
 
+# ---------------funcion resta------------------------------
+num1 = 0
 
-#---------------funcion resta------------------------------
-num1=0
+contador_resta = 0
 
-contador_resta=0
 
 def resta(num):
 
-	global operacion
+    global operacion
 
-	global resultado
+    global resultado
 
-	global num1
+    global num1
 
-	global contador_resta
+    global contador_resta
 
-	global reset_pantalla
+    global reset_pantalla
 
-	if contador_resta==0:
+    if contador_resta == 0:
 
-		num1=int(num)
+        num1 = int(num)
 
-		resultado=num1
+        resultado = num1
 
-	else:
+    else:
 
-		if contador_resta==1:
+        if contador_resta == 1:
 
-			resultado=num1-int(num)
+            resultado = num1 - int(num)
 
-		else:
+        else:
 
-			resultado=int(resultado)-int(num)	
+            resultado = int(resultado) - int(num)
 
-		numeroPantalla.set(resultado)
+        numeroPantalla.set(resultado)
 
-		resultado=numeroPantalla.get()
+        resultado = numeroPantalla.get()
+
+    contador_resta = contador_resta + 1
+
+    operacion = "resta"
+
+    reset_pantalla = True
 
 
-	contador_resta=contador_resta+1
+# -------------funcion multiplicacion---------------------
+contador_multi = 0
 
-	operacion="resta"
-
-	reset_pantalla=True
-
-
-#-------------funcion multiplicacion---------------------
-contador_multi=0
 
 def multiplica(num):
 
-	global operacion
+    global operacion
 
-	global resultado
+    global resultado
 
-	global num1
+    global num1
 
-	global contador_multi
+    global contador_multi
 
-	global reset_pantalla
-	
-	if contador_multi==0:
+    global reset_pantalla
 
-		num1=int(num)
-		
-		resultado=num1
+    if contador_multi == 0:
 
-	else:
+        num1 = int(num)
 
-		if contador_multi==1:
+        resultado = num1
 
-			resultado=num1*int(num)
+    else:
 
-		else:
+        if contador_multi == 1:
 
-			resultado=int(resultado)*int(num)	
+            resultado = num1 * int(num)
 
-		numeroPantalla.set(resultado)
-		
-		resultado=numeroPantalla.get()
+        else:
+
+            resultado = int(resultado) * int(num)
+
+        numeroPantalla.set(resultado)
+
+        resultado = numeroPantalla.get()
+
+    contador_multi = contador_multi + 1
+
+    operacion = "multiplicacion"
+
+    reset_pantalla = True
 
 
-	contador_multi=contador_multi+1
+# -----------------funcion division---------------------
 
-	operacion="multiplicacion"
+contador_divi = 0
 
-	reset_pantalla=True
-
-#-----------------funcion division---------------------
-
-contador_divi=0
 
 def divide(num):
 
-	global operacion
+    global operacion
 
-	global resultado
+    global resultado
 
-	global num1
+    global num1
 
-	global contador_divi
+    global contador_divi
 
-	global reset_pantalla
-	
-	if contador_divi==0:
+    global reset_pantalla
 
-		num1=float(num)
-		
-		resultado=num1
+    if contador_divi == 0:
 
-	else:
+        num1 = float(num)
 
-		if contador_divi==1:
+        resultado = num1
 
-			resultado=num1/float(num)
+    else:
 
-		else:
+        if contador_divi == 1:
 
-			resultado=float(resultado)/float(num)	
+            resultado = num1 / float(num)
 
-		numeroPantalla.set(resultado)
-		
-		resultado=numeroPantalla.get()
+        else:
 
+            resultado = float(resultado) / float(num)
 
-	contador_divi=contador_divi+1
+        numeroPantalla.set(resultado)
 
-	operacion="division"
+        resultado = numeroPantalla.get()
 
-	reset_pantalla=True
+    contador_divi = contador_divi + 1
 
+    operacion = "division"
+
+    reset_pantalla = True
 
 
-#----------------funcion el_resultado----------------
+# ----------------funcion el_resultado----------------
+
 
 def el_resultado():
 
-	global resultado
+    global resultado
 
-	global operacion
+    global operacion
 
-	global contador_resta
+    global contador_resta
 
-	global contador_multi
+    global contador_multi
 
-	global contador_divi
-	
+    global contador_divi
 
-	if operacion=="suma":
+    if operacion == "suma":
 
-		numeroPantalla.set(resultado+int(numeroPantalla.get()))
+        numeroPantalla.set(resultado + int(numeroPantalla.get()))
 
-		resultado=0
+        resultado = 0
 
-	elif operacion=="resta":
+    elif operacion == "resta":
 
-		numeroPantalla.set(int(resultado)-int(numeroPantalla.get()))
+        numeroPantalla.set(int(resultado) - int(numeroPantalla.get()))
 
-		resultado=0
+        resultado = 0
 
-		contador_resta=0
+        contador_resta = 0
 
-	elif operacion=="multiplicacion":
+    elif operacion == "multiplicacion":
 
-		numeroPantalla.set(int(resultado)*int(numeroPantalla.get()))
+        numeroPantalla.set(int(resultado) * int(numeroPantalla.get()))
 
-		resultado=0
+        resultado = 0
 
-		contador_multi=0
+        contador_multi = 0
 
-	elif operacion=="division":
+    elif operacion == "division":
 
-		numeroPantalla.set(int(resultado)/int(numeroPantalla.get()))
+        numeroPantalla.set(int(resultado) / int(numeroPantalla.get()))
 
-		resultado=0
+        resultado = 0
 
-		contador_divi=0
-
-	
+        contador_divi = 0
 
 
+# -------------fila 1---------------------------------------------
 
-
-#-------------fila 1---------------------------------------------
-
-boton7=Button(miFrame, text="7", width=3, command=lambda:numeroPulsado("7"))
+boton7 = Button(miFrame, text="7", width=3, command=lambda: numeroPulsado("7"))
 boton7.grid(row=2, column=1)
-boton8=Button(miFrame, text="8", width=3, command=lambda:numeroPulsado("8"))
+boton8 = Button(miFrame, text="8", width=3, command=lambda: numeroPulsado("8"))
 boton8.grid(row=2, column=2)
-boton9=Button(miFrame, text="9", width=3, command=lambda:numeroPulsado("9"))
+boton9 = Button(miFrame, text="9", width=3, command=lambda: numeroPulsado("9"))
 boton9.grid(row=2, column=3)
-botonDiv=Button(miFrame, text="/", width=3, command=lambda:divide(numeroPantalla.get()))
+botonDiv = Button(
+    miFrame, text="/", width=3, command=lambda: divide(numeroPantalla.get())
+)
 botonDiv.grid(row=2, column=4)
 
 
-#-------------fila 2---------------------------------------------
+# -------------fila 2---------------------------------------------
 
-boton4=Button(miFrame, text="4", width=3, command=lambda:numeroPulsado("4"))
+boton4 = Button(miFrame, text="4", width=3, command=lambda: numeroPulsado("4"))
 boton4.grid(row=3, column=1)
-boton5=Button(miFrame, text="5", width=3, command=lambda:numeroPulsado("5"))
+boton5 = Button(miFrame, text="5", width=3, command=lambda: numeroPulsado("5"))
 boton5.grid(row=3, column=2)
-boton6=Button(miFrame, text="6", width=3, command=lambda:numeroPulsado("6"))
+boton6 = Button(miFrame, text="6", width=3, command=lambda: numeroPulsado("6"))
 boton6.grid(row=3, column=3)
-botonMult=Button(miFrame, text="x", width=3, command=lambda:multiplica(numeroPantalla.get()))
+botonMult = Button(
+    miFrame, text="x", width=3, command=lambda: multiplica(numeroPantalla.get())
+)
 botonMult.grid(row=3, column=4)
 
-#-------------fila 3---------------------------------------------
+# -------------fila 3---------------------------------------------
 
-boton1=Button(miFrame, text="1", width=3, command=lambda:numeroPulsado("1"))
+boton1 = Button(miFrame, text="1", width=3, command=lambda: numeroPulsado("1"))
 boton1.grid(row=4, column=1)
-boton2=Button(miFrame, text="2", width=3, command=lambda:numeroPulsado("2"))
+boton2 = Button(miFrame, text="2", width=3, command=lambda: numeroPulsado("2"))
 boton2.grid(row=4, column=2)
-boton3=Button(miFrame, text="3", width=3, command=lambda:numeroPulsado("3"))
+boton3 = Button(miFrame, text="3", width=3, command=lambda: numeroPulsado("3"))
 boton3.grid(row=4, column=3)
-botonRest=Button(miFrame, text="-", width=3, command=lambda:resta(numeroPantalla.get()))
+botonRest = Button(
+    miFrame, text="-", width=3, command=lambda: resta(numeroPantalla.get())
+)
 botonRest.grid(row=4, column=4)
 
 
-#-------------fila 4---------------------------------------------
+# -------------fila 4---------------------------------------------
 
-boton0=Button(miFrame, text="0", width=3, command=lambda:numeroPulsado("0"))
+boton0 = Button(miFrame, text="0", width=3, command=lambda: numeroPulsado("0"))
 boton0.grid(row=5, column=1)
-botonComa=Button(miFrame, text=",", width=3, command=lambda:numeroPulsado("."))
+botonComa = Button(miFrame, text=",", width=3, command=lambda: numeroPulsado("."))
 botonComa.grid(row=5, column=2)
-botonIgual=Button(miFrame, text="=", width=3, command=lambda:el_resultado())
+botonIgual = Button(miFrame, text="=", width=3, command=lambda: el_resultado())
 botonIgual.grid(row=5, column=3)
-botonSum=Button(miFrame, text="+", width=3, command=lambda:suma(numeroPantalla.get()))
+botonSum = Button(
+    miFrame, text="+", width=3, command=lambda: suma(numeroPantalla.get())
+)
 botonSum.grid(row=5, column=4)
-
-
-
 
 
 raiz.mainloop()

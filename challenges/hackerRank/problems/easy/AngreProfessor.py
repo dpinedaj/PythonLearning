@@ -1,17 +1,16 @@
 def angryProfessor(k, a):
-    answer="YES"
-    count=0
+    answer = "YES"
+    count = 0
     for i in a:
-        if i <=0:
-            count+=1
-    if count >=k:
-        answer="NO"
+        if i <= 0:
+            count += 1
+    if count >= k:
+        answer = "NO"
 
     return answer
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
 
     for t_itr in range(t):
@@ -24,5 +23,3 @@ if __name__ == '__main__':
         a = list(map(int, input().rstrip().split()))
 
         result = angryProfessor(k, a)
-
-      

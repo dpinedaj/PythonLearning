@@ -1,9 +1,8 @@
-
 print("Verificación de acceso")
 
-edad_usuario=int(input("Inserte la edad del usuario: "))
+edad_usuario = int(input("Inserte la edad del usuario: "))
 
-if edad_usuario<18:
-	print("No puedes pasar")
+if edad_usuario < 18:
+    print("No puedes pasar")
 else:
-	print("Puedes pasar")
+    print("Puedes pasar")

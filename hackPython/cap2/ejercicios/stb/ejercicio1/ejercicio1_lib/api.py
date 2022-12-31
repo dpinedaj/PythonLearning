@@ -55,4 +55,4 @@ def run(config):
     # --------------------------------------------------------------------------
 
     for i, j in product(config.target, config.port):
-        print(i,j)
+        print(i, j)

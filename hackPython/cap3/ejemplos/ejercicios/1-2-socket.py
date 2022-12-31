@@ -1,13 +1,14 @@
 from socket import *
 
+
 def escaner():
-    ip = input('Introduce IP: ')
+    ip = input("Introduce IP: ")
 
     start = int(input("Introduce el puerto de inicio: "))
 
     end = int(input("Introduce el puerto de fin: "))
 
-    print("Escaneando IP {}". format(ip))
+    print("Escaneando IP {}".format(ip))
 
     for port in range(start, end):
         print("Probando puerto {}".format(port))
@@ -25,9 +26,9 @@ def escaner():
 
 def server():
     size = 512
-    host = 'localhost'
+    host = "localhost"
     port = 5000
-    #Family = Internet, type = stream socket means TCP
+    # Family = Internet, type = stream socket means TCP
     sock = socket(AF_INET, SOCK_STREAM)
     sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     sock.bind((host, port))

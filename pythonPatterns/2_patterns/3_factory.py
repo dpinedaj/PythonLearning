@@ -68,6 +68,7 @@ class PointFactory:
 
 # Abstract Factory
 
+
 class HotDrink(ABC):
     def consume(self):
         ...
@@ -90,15 +91,13 @@ class HotDrinkFactory(ABC):
 
 class TeaFactory(HotDrinkFactory):
     def prepare(self, amount):
-        print("Put in tea bag, boil water,"
-              f" pour {amount}ml, enjoy!")
+        print("Put in tea bag, boil water," f" pour {amount}ml, enjoy!")
         return Tea()
 
 
 class CoffeeFactory(HotDrinkFactory):
     def prepare(self, amount):
-        print("Grind some beans, boil water,"
-              f" pour {amount}ml, enjoy!")
+        print("Grind some beans, boil water," f" pour {amount}ml, enjoy!")
         return Coffe()
 
 

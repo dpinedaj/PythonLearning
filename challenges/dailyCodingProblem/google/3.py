@@ -24,14 +24,16 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 """
 
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-def deserialize(serialized: dict)-> Node:
-    node = Node(serialized['val'])
+
+def deserialize(serialized: dict) -> Node:
+    node = Node(serialized["val"])
     for key, value in serialized.items():
         if isinstance(value, dict):
             node.__dict__[key] = deserialize(value)
@@ -48,8 +50,9 @@ def serialize(node: Node) -> dict:
             else:
                 acc[key] = value
         return acc
+
     return loop_dict(node.__dict__, {})
 
-node = Node('root', Node('left', Node('left.left')), Node('right'))
-assert deserialize(serialize(node)).left.left.val == 'left.left'
 
+node = Node("root", Node("left", Node("left.left")), Node("right"))
+assert deserialize(serialize(node)).left.left.val == "left.left"

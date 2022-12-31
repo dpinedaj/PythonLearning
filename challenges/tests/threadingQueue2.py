@@ -2,6 +2,7 @@ from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from time import sleep
 from threading import Thread
 
+
 def retry(status, time_sleep=5):
     sleep(time_sleep)
     pending_tasks[executor.submit(bool, status)] = status

@@ -1,15 +1,13 @@
-
-
-email =input("Introduce tu email, por favor: ")
+email = input("Introduce tu email, por favor: ")
 
 for i in email:
-	if i=="@":
-		arroba=True
+    if i == "@":
+        arroba = True
 
-		break
+        break
 
 else:
 
-	arroba=False
+    arroba = False
 
 print(arroba)

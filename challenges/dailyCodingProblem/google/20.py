@@ -15,7 +15,9 @@ the same value are the exact same node objects.
 Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
 """
 
+
 def problem20(arr1, arr2):
     return list(set(enumerate(arr1)).intersection(set(enumerate(arr2))))[0][1]
+
 
 problem20([1, 2, 3, 4], [4, 5, 3, 1])

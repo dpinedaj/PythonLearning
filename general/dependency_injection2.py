@@ -11,20 +11,14 @@ class Sample:
 
     @staticmethod
     def parse(data: dict[str, str]):
-        return Sample(
-            data["a"], data["b"],
-            data["c"], data["d"]
-        )
+        return Sample(data["a"], data["b"], data["c"], data["d"])
 
 
 class Container(containers.DeclarativeContainer):
 
     config = providers.Configuration()
 
-    sample = providers.Singleton(
-        Sample.parse,
-        config.data
-    )
+    sample = providers.Singleton(Sample.parse, config.data)
 
 
 @inject

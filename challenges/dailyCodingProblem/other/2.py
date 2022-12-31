@@ -15,15 +15,18 @@ Follow-up: what if you can't use division?
 
 """
 
+
 def problem2(array: list) -> list:
     length: int = len(array)
+
     def multiply(index: int):
         res: int = 1
         for i in range(length):
             res: int = res * array[i] if i != index else res
         return res
+
     return [multiply(i) for i in range(length)]
 
 
-assert(problem2([3, 2, 1]) == [2, 3, 6])
-assert(problem2([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24])
+assert problem2([3, 2, 1]) == [2, 3, 6]
+assert problem2([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]

@@ -15,13 +15,15 @@ You can modify the input array in-place.
 
 """
 
+
 def problem4(array: list) -> int:
-    new_array = [i for i in 
-                    list( set(list(range(min(array), max(array) + 1))) - set(array) )
-                    if i > 0]
+    new_array = [
+        i
+        for i in list(set(list(range(min(array), max(array) + 1))) - set(array))
+        if i > 0
+    ]
     return new_array[0] if len(new_array) > 0 else max(array) + 1
 
-assert(problem4([3, 4, -1, 1]) == 2)
-assert(problem4([1, 2, 0]) == 3)
 
-
+assert problem4([3, 4, -1, 1]) == 2
+assert problem4([1, 2, 0]) == 3

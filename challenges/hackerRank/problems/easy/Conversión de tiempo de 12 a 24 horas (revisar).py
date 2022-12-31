@@ -1,4 +1,3 @@
-
 ###import os
 ###import sys
 
@@ -7,17 +6,18 @@
 #
 def timeConversion(s):
 
-    time= s.strip()
-    
-    h, m, s = map(int, time[:-2].split(':'))
-    
+    time = s.strip()
+
+    h, m, s = map(int, time[:-2].split(":"))
+
     p = time[-2:]
 
-    h = h % 12 + (p.upper() == 'PM') * 12
+    h = h % 12 + (p.upper() == "PM") * 12
 
-    return (('%02d:%02d:%02d') % (h, m, s))
+    return ("%02d:%02d:%02d") % (h, m, s)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     ###f = open(os.environ['OUTPUT_PATH'], 'w')
 
     s = input()
@@ -25,6 +25,6 @@ if __name__ == '__main__':
     result = timeConversion(s)
 
     ###f.write(result + '\n')
-    print(result + '\n')
+    print(result + "\n")
 
     ###f.close()

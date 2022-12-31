@@ -21,20 +21,14 @@ class Sample:
 
     @staticmethod
     def parse(data: SampleData):
-        return Sample(
-            data.a, data.b,
-            data.c, data.d
-        )
+        return Sample(data.a, data.b, data.c, data.d)
 
 
 class Container(containers.DeclarativeContainer):
 
     config = providers.Configuration()
 
-    sample = providers.Singleton(
-        Sample.parse,
-        config.data
-    )
+    sample = providers.Singleton(Sample.parse, config.data)
 
 
 class Validator:
@@ -49,9 +43,8 @@ if __name__ == "__main__":
     cnt = Container()
     cnt.config.data.from_value(sample_data)
     cnt.wire(modules=[__name__])
-    
+
     Validator.main()
     sample2 = Sample(1, 2, 3, 4)
     cnt.sample.override(sample2)
     Validator.main()
-    

@@ -26,12 +26,8 @@ class Relationships(RelationshipBrowser):
         self.relations = []
 
     def add_parent_and_child(self, parent, child) -> None:
-        self.relations.append(
-            (parent, Relationship.PARENT, child)
-        )
-        self.relations.append(
-            (child, Relationship.CHILD, parent)
-        )
+        self.relations.append((parent, Relationship.PARENT, child))
+        self.relations.append((child, Relationship.CHILD, parent))
 
     def find_all_children_of(self, name):
         for r in self.relations:

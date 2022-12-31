@@ -1,4 +1,4 @@
-reference= "https://www.hackerrank.com/challenges/recursive-digit-sum/problem?isFullScreen=true"
+reference = "https://www.hackerrank.com/challenges/recursive-digit-sum/problem?isFullScreen=true"
 
 #%%
 def superDigit(n, k):
@@ -9,7 +9,8 @@ def superDigit(n, k):
         else:
             newX = str(sum(int(i) for i in x))
             return compute(newX)
-    return compute(str(n)*k)
+
+    return compute(str(n) * k)
 
 
 print(superDigit(148, 3))

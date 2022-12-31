@@ -1,8 +1,9 @@
 import httplib2
 
+
 def prueba(url):
     h = httplib2.Http()
-    response = h.request(url, 'GET')
+    response = h.request(url, "GET")
     response.geturl()
     response.getcode()
     response.headers.keys()
@@ -11,4 +12,5 @@ def prueba(url):
     for header, value in response.headers.items():
         print(header + " : " + value)
 
-prueba('http://www.google.com')
+
+prueba("http://www.google.com")

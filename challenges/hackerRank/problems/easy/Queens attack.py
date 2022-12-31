@@ -1,5 +1,3 @@
-
-
 def move_queen(n, updated_row, updated_col, r, c, obstacles):
     p = 0
     while True:
@@ -9,8 +7,6 @@ def move_queen(n, updated_row, updated_col, r, c, obstacles):
         if (c < 1 or c > n or r < 1 or r > n) or (key in obstacles):
             return p
         p += 1
-
-
 
 
 def queensAttack(n, k, r_q, c_q, obs):
@@ -23,21 +19,18 @@ def queensAttack(n, k, r_q, c_q, obs):
     dc = [0, -1, 1, 1, -1, 0, 1, -1]
 
     for i in range(8):
-        p += move_queen(n, (lambda r: r + dr[i]), (lambda c: c + dc[i]), r_q, c_q, obstacles)
+        p += move_queen(
+            n, (lambda r: r + dr[i]), (lambda c: c + dc[i]), r_q, c_q, obstacles
+        )
 
     return p
 
 
-
-
-
-
-
-#Tablero nxn
-#k obstáculos
-#r_q posición de la fila de la reina
-#c_q posición de la columna de lal reina
-#obstacles posición de los obstáculos
+# Tablero nxn
+# k obstáculos
+# r_q posición de la fila de la reina
+# c_q posición de la columna de lal reina
+# obstacles posición de los obstáculos
 
 
 nk = input().split()
@@ -54,4 +47,4 @@ for _ in range(k):
 
 result = queensAttack(n, k, r_q, c_q, obstacles)
 
-print(str(result) + '\n')
+print(str(result) + "\n")

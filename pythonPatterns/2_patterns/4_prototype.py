@@ -40,7 +40,7 @@ print(john)
 # If Jane lives with John, this should be possible, but it doesn't
 print("\nWrong way:")
 jane = john
-jane.name = 'Jane'
+jane.name = "Jane"
 print(jane)
 print(john)
 
@@ -89,16 +89,15 @@ class EmployeeFactory:
     @staticmethod
     def new_main_office_employee(name, suite):
         return EmployeeFactory.__new_employee(
-            EmployeeFactory.main_office_employee,
-            name, suite
+            EmployeeFactory.main_office_employee, name, suite
         )
 
     @staticmethod
     def new_aux_office_employee(name, suite):
         return EmployeeFactory.__new_employee(
-            EmployeeFactory.aux_office_employee,
-            name, suite
+            EmployeeFactory.aux_office_employee, name, suite
         )
+
 
 ###############################
 # Exercise

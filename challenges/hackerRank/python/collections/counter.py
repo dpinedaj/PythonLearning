@@ -6,9 +6,8 @@ c = 6
 cs = ["6 55", "6 45", "6 55", "4 40", "18 60", "10 50"]
 
 
-
 sl = Counter(s.split())
-items = [[i, j] for i,j in sl.items()]
+items = [[i, j] for i, j in sl.items()]
 cust = [[i.split()[0], int(i.split()[1])] for i in cs]
 
 result = 0
@@ -20,5 +19,3 @@ for c in cust:
             result += c[1]
 
 print(result)
-            
-

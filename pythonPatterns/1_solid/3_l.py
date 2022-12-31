@@ -33,6 +33,7 @@ class Rectangle:
 class Square(Rectangle):
     def __init__(self, size):
         Rectangle.__init__(self, size, size)
+
     # Those methods directly violates the principle
 
     @Rectangle.width.setter
@@ -47,7 +48,7 @@ class Square(Rectangle):
 def use_it(rc: Rectangle):
     w = rc.width
     rc.height = 10
-    expected = int(w*10)
+    expected = int(w * 10)
     print(f"Expected an area of {expected}, got {rc.area}")
 
 

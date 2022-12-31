@@ -1,11 +1,11 @@
-nombre="Pildoras Informaticas"
+nombre = "Pildoras Informaticas"
 
-contador=0
+contador = 0
 
 for i in nombre:
-	if i==" ":
-		continue
+    if i == " ":
+        continue
 
-	contador+=1
+    contador += 1
 
 print(contador)

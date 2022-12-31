@@ -6,13 +6,15 @@ ventana = Tk()
 
 
 def abrirfichero():
-    file = fd.askopenfilename(title="Abrir",initialdir="C:")
+    file = fd.askopenfilename(title="Abrir", initialdir="C:")
+
 
 def mensaje():
     mb.showinfo(title="mensaje", message="HOLAAA")
 
-Button(ventana,text="abrir",command = abrirfichero).pack()
-Button(ventana,text="mensaje",command = mensaje).pack()
+
+Button(ventana, text="abrir", command=abrirfichero).pack()
+Button(ventana, text="mensaje", command=mensaje).pack()
 
 
 ventana.mainloop()

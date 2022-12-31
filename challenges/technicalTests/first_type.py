@@ -1,6 +1,6 @@
 def solution(s):
     c = s[0]
-    if c.isupper():    # please fix condition
+    if c.isupper():  # please fix condition
         return "upper"
     elif c.islower():  # please fix condition
         return "lower"
@@ -10,5 +10,5 @@ def solution(s):
         return "other"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(solution("1ola"))

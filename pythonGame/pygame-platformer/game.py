@@ -14,7 +14,6 @@ pygame.mixer.pre_init()
 pygame.init()
 
 
-
 # Controls
 LEFT = pygame.K_LEFT
 RIGHT = pygame.K_RIGHT
@@ -31,27 +30,12 @@ FONT_MD = pygame.font.Font("assets/fonts/minya_nouvelle_bd.ttf", 64)
 FONT_LG = pygame.font.Font("assets/fonts/thats_super.ttf", 72)
 
 
-
 # Images
 hero_walk1 = load_image("assets/character/adventurer_walk1.png")
 hero_walk2 = load_image("assets/character/adventurer_walk2.png")
 hero_jump = load_image("assets/character/adventurer_jump.png")
 hero_idle = load_image("assets/character/adventurer_idle.png")
-hero_images = {"run": [hero_walk1, hero_walk2],
-               "jump": hero_jump,
-               "idle": hero_idle}
-
-
-
-
-
-
-
-
-
-
-
-
+hero_images = {"run": [hero_walk1, hero_walk2], "jump": hero_jump, "idle": hero_idle}
 
 
 class Game:
@@ -92,11 +76,11 @@ class Game:
         line1 = FONT_LG.render(constants.TITLE, True, DARK_BLUE)
         line2 = FONT_SM.render("Press any key to start.", True, WHITE)
 
-        x1 = constants.WIDTH / 2 - line1.get_width() / 2;
-        y1 = constants.HEIGHT / 3 - line1.get_height() / 2;
+        x1 = constants.WIDTH / 2 - line1.get_width() / 2
+        y1 = constants.HEIGHT / 3 - line1.get_height() / 2
 
-        x2 = constants.WIDTH / 2 - line2.get_width() / 2;
-        y2 = y1 + line1.get_height() + 16;
+        x2 = constants.WIDTH / 2 - line2.get_width() / 2
+        y2 = y1 + line1.get_height() + 16
 
         surface.blit(line1, (x1, y1))
         surface.blit(line2, (x2, y2))
@@ -105,11 +89,11 @@ class Game:
         line1 = FONT_MD.render(primary_text, 1, WHITE)
         line2 = FONT_SM.render(secondary_text, 1, WHITE)
 
-        x1 = constants.WIDTH / 2 - line1.get_width() / 2;
-        y1 = constants.HEIGHT / 3 - line1.get_height() / 2;
+        x1 = constants.WIDTH / 2 - line1.get_width() / 2
+        y1 = constants.HEIGHT / 3 - line1.get_height() / 2
 
-        x2 = constants.WIDTH / 2 - line2.get_width() / 2;
-        y2 = y1 + line1.get_height() + 16;
+        x2 = constants.WIDTH / 2 - line2.get_width() / 2
+        y2 = y1 + line1.get_height() + 16
 
         surface.blit(line1, (x1, y1))
         surface.blit(line2, (x2, y2))
@@ -194,7 +178,9 @@ class Game:
         self.level.active_sprites.draw(self.level.active_layer)
 
         if self.hero.invincibility % 3 < 2:
-            self.level.active_layer.blit(self.hero.image, [self.hero.rect.x, self.hero.rect.y])
+            self.level.active_layer.blit(
+                self.hero.image, [self.hero.rect.x, self.hero.rect.y]
+            )
 
         self.window.blit(self.level.background_layer, [offset_x / 3, offset_y])
         self.window.blit(self.level.scenery_layer, [offset_x / 2, offset_y])
@@ -210,7 +196,9 @@ class Game:
         elif self.stage == Game.PAUSED:
             pass
         elif self.stage == Game.LEVEL_COMPLETED:
-            self.display_message(self.window, "Level Complete", "Press any key to continue.")
+            self.display_message(
+                self.window, "Level Complete", "Press any key to continue."
+            )
         elif self.stage == Game.VICTORY:
             self.display_message(self.window, "You Win!", "Press 'R' to restart.")
         elif self.stage == Game.GAME_OVER:
@@ -224,6 +212,7 @@ class Game:
             self.update()
             self.draw()
             self.clock.tick(constants.FPS)
+
 
 if __name__ == "__main__":
     game = Game()

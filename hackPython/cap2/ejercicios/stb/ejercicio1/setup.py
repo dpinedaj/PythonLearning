@@ -27,35 +27,37 @@ from os.path import dirname, join
 from setuptools import setup, find_packages
 
 # Import requirements
-with open(join(dirname(__file__), 'requirements.txt')) as f:
+with open(join(dirname(__file__), "requirements.txt")) as f:
     required = f.read().splitlines()
 
 
 setup(
-    name='ejercicio1',
-    version='1.0.0',
+    name="ejercicio1",
+    version="1.0.0",
     install_requires=required,
-    url='Sin Url',
-    license='BSD',
-    author='Daniel Pineda',
-    author_email='dpinedaj@unal.edu.co',
+    url="Sin Url",
+    license="BSD",
+    author="Daniel Pineda",
+    author_email="dpinedaj@unal.edu.co",
     packages=find_packages(),
     include_package_data=True,
-    entry_points={'console_scripts': [
-        'ejercicio1 = ejercicio1_lib.ejercicio1:main',
-        ]},
-    description='ejercicio1 para curso hackpython',
-    long_description=open('README.md', "r").read(),
-    classifiers=[
-        'Environment :: Console',
-        'Intended Audience :: System Administrators',
-        'Intended Audience :: Other Audience',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: MacOS',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: POSIX',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 3',
-        'Topic :: Security',
+    entry_points={
+        "console_scripts": [
+            "ejercicio1 = ejercicio1_lib.ejercicio1:main",
         ]
+    },
+    description="ejercicio1 para curso hackpython",
+    long_description=open("README.md", "r").read(),
+    classifiers=[
+        "Environment :: Console",
+        "Intended Audience :: System Administrators",
+        "Intended Audience :: Other Audience",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: MacOS",
+        "Operating System :: Microsoft :: Windows",
+        "Operating System :: POSIX",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+        "Topic :: Security",
+    ],
 )

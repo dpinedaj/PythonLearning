@@ -5,6 +5,7 @@ from functools import partial
 def func(a, b):
     print(a, b)
 
+
 #%%
 
 from multiprocessing.pool import ThreadPool

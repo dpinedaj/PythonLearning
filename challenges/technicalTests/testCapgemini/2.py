@@ -7,4 +7,3 @@ for i in range(n):
         print(p, end="")
         ne = not ne
     print("")
-        

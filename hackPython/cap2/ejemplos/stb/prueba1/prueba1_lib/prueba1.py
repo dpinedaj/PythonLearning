@@ -12,20 +12,31 @@ def main():
 
     from .api import run_console, GlobalParameters
 
-    examples = '''
+    examples = """
 Examples:
 
     * Scan target using default 50 most common plugins:
         %(tool_name)s TARGET
-    '''  % dict(tool_name="prueba1")
+    """ % dict(
+        tool_name="prueba1"
+    )
 
-    parser = argparse.ArgumentParser(description='%s security tool' % "prueba1".capitalize(), epilog=examples,
-                                     formatter_class=argparse.RawTextHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description="%s security tool" % "prueba1".capitalize(),
+        epilog=examples,
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
 
     # Main options
     parser.add_argument("target", metavar="TARGET", nargs="*")
-    parser.add_argument("-v", "--verbosity", dest="verbose", action="count", help="verbosity level: -v, -vv, -vvv.",
-                        default=1)
+    parser.add_argument(
+        "-v",
+        "--verbosity",
+        dest="verbose",
+        action="count",
+        help="verbosity level: -v, -vv, -vvv.",
+        default=1,
+    )
 
     parsed_args = parser.parse_args()
 
@@ -42,6 +53,7 @@ Examples:
     except Exception as e:
         log.critical("[!] Unhandled exception: %s" % str(e))
 
+
 if __name__ == "__main__" and __package__ is None:
     # --------------------------------------------------------------------------
     #
@@ -50,9 +62,11 @@ if __name__ == "__main__" and __package__ is None:
     # --------------------------------------------------------------------------
     import sys
     import os
+
     parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     sys.path.insert(1, parent_dir)
     import prueba1_lib
+
     __package__ = str("prueba1_lib")
 
     del sys, os

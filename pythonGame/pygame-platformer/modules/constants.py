@@ -8,7 +8,9 @@ class Constants:
         self.__LEVELS_PATH = "levels"
 
         # Levels
-        self.__LEVELS = [os.path.join(self.__LEVELS_PATH, p) for p in os.listdir(self.__LEVELS_PATH)]
+        self.__LEVELS = [
+            os.path.join(self.__LEVELS_PATH, p) for p in os.listdir(self.__LEVELS_PATH)
+        ]
 
         # Window settings
         self.__TITLE = "DANIEL's GAME"
@@ -20,7 +22,6 @@ class Constants:
         # Options
         self.__SOUND_ON = True
 
-
         # Sounds
         self.__SOUNDS_PATH = os.path.join(self.__ASSETS_PATH, "sounds")
         self.__JUMP_SOUND_FILE = os.path.join(self.__SOUNDS_PATH, "jump.wav")
@@ -30,8 +31,6 @@ class Constants:
         self.__DIE_SOUND_FILE = os.path.join(self.__SOUNDS_PATH, "death.wav")
         self.__LEVELUP_SOUND_FILE = os.path.join(self.__SOUNDS_PATH, "level_up.wav")
         self.__GAMEOVER_SOUND_FILE = os.path.join(self.__SOUNDS_PATH, "game_over.wav")
-
-
 
     @property
     def ASSETS_PATH(self):

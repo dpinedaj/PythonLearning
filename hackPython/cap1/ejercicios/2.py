@@ -6,6 +6,7 @@ En el mismo script escribe un ejemplo práctico usando los diferentes métodos p
  si el saldo es cero, no se podrá retirar dinero de la cuenta.
 """
 
+
 class cuentaBancaria:
     def __init__(self, titular, numero_cuenta, saldo_inicial):
         self.titular = titular
@@ -21,8 +22,9 @@ class cuentaBancaria:
             valorEjecucion = "OK"
             self.mvtos += 1
         except:
-            valorEjecucion ="ERROR"
+            valorEjecucion = "ERROR"
         return valorEjecucion
+
     def retirar(self, valor):
         valorEjecucion = None
         try:
@@ -40,18 +42,15 @@ class cuentaBancaria:
     def consultar_saldo(self):
         self.mvtos += 1
         return self.saldo
-    
+
     def consultar_mvtos(self):
         return self.mvtos
-    
+
     def __repr__(self):
         return """Cuenta bancaria,
                 titular: {},
                 numero_cuenta: {},
                 saldo: {},
                 mvtos: {}""".format(
-                    self.titular,
-                    self.numero_cuenta,
-                    self.saldo,
-                    self.mvtos )
-            
+            self.titular, self.numero_cuenta, self.saldo, self.mvtos
+        )

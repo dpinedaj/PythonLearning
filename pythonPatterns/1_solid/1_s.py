@@ -15,13 +15,13 @@ class Journal:
         del self.entries[pos]
 
     def __str__(self):
-        return '\n'.join(self.entries)
+        return "\n".join(self.entries)
 
 
 class PersistenceManager:
     @staticmethod
     def save_to_file(journal, filename):
-        file = open(filename, 'w')
+        file = open(filename, "w")
         file.write(str(journal))
         file.close()
 
@@ -31,5 +31,5 @@ j.add_entry("I cried today")
 j.add_entry("I ate a bug.")
 print(f"Journal entries: \n{j}")
 
-file = 'test.txt'
+file = "test.txt"
 PersistenceManager.save_to_file(j, file)

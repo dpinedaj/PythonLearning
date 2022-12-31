@@ -22,13 +22,14 @@ queries: an array of integers, the indices to report"""
 # Complete the circularArrayRotation function below.
 import collections
 
+
 def circularArrayRotation(a, k, queries):
     d = collections.deque(a)
     d.rotate(k)
     return (d[i] for i in queries)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     nkq = input().split()
 
     n = int(nkq[0])
@@ -47,5 +48,5 @@ if __name__ == '__main__':
 
     result = circularArrayRotation(a, k, queries)
 
-    print('\n'.join(map(str, result)))
-    print('\n')
+    print("\n".join(map(str, result)))
+    print("\n")

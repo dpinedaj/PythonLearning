@@ -23,6 +23,7 @@ class GlobalParameters:
         # Auto set config from argparser
         if from_argparse is not None:
             from argparse import Namespace
+
             if isinstance(from_argparse, Namespace):
                 for p_name, p_value in six.iteritems(vars(from_argparse)):
                     setattr(self, p_name, p_value)
@@ -40,7 +41,7 @@ class GlobalResults:
 
         :param end_execution: end execution time and date.
         :type end_execution: date
-        
+
         :param execution_status: result of execution status. Available values: "oks"|"errors"|"warnings"]
         :type execution_status: str
 
@@ -51,13 +52,21 @@ class GlobalResults:
 
         # Check types
         if not isinstance(self.start_execution, datetime):
-            raise TypeError("Expected datetime, got '%s' instead" % type(self.start_execution))
+            raise TypeError(
+                "Expected datetime, got '%s' instead" % type(self.start_execution)
+            )
         if not isinstance(self.end_execution, datetime):
-            raise TypeError("Expected datetime, got '%s' instead" % type(self.end_execution))
+            raise TypeError(
+                "Expected datetime, got '%s' instead" % type(self.end_execution)
+            )
         if not isinstance(self.execution_status, str):
-            raise TypeError("Expected str, got '%s' instead" % type(self.execution_status))
+            raise TypeError(
+                "Expected str, got '%s' instead" % type(self.execution_status)
+            )
         else:
             execution_status_allowed = ("oks", "errors", "warnings")
             if self.execution_status not in execution_status_allowed:
-                raise ValueError("Bad '%s' value for 'execution_status' parameter. Allowed: %s" %
-                                 ",".join(execution_status_allowed))
+                raise ValueError(
+                    "Bad '%s' value for 'execution_status' parameter. Allowed: %s"
+                    % ",".join(execution_status_allowed)
+                )

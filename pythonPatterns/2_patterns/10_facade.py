@@ -122,14 +122,14 @@ class MagicSquareGenerator:
         generator = Generator()
         splitter = Splitter()
         verifier = Verifier()
-        
+
         while True:
             array = [generator.generate(size) for i in range(size)]
             splitted = splitter.split(array)
             if verifier.verify(splitted):
                 return array
-        
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     square = MagicSquareGenerator().generate(3)
     print(square)

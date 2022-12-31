@@ -39,6 +39,7 @@ class ProductFilter:
 
 # Specification
 
+
 class Specification:
     def is_satisfied(self, item):
         raise NotImplementedError
@@ -73,9 +74,7 @@ class AndSpecification(Specification):
         self.args = args
 
     def is_satisfied(self, item):
-        return all(map(
-            lambda spec: spec.is_satisfied(item), self.args
-        ))
+        return all(map(lambda spec: spec.is_satisfied(item), self.args))
 
 
 class BetterFilter(Filter):
@@ -85,7 +84,7 @@ class BetterFilter(Filter):
                 yield item
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     apple = Product("Apple", Color.GREEN, Size.SMALL)
     tree = Product("Tree", Color.GREEN, Size.LARGE)
     house = Product("House", Color.BLUE, Size.LARGE)

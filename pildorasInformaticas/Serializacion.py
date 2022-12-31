@@ -2,10 +2,10 @@ import pickle
 
 lista_nombres = ["Pedro", "Ana", "María", "Isabel"]
 
-fichero_binario=open("lista_nombres", "wb")
+fichero_binario = open("lista_nombres", "wb")
 
-pickle.dump(lista_nombres,fichero_binario)
+pickle.dump(lista_nombres, fichero_binario)
 
 fichero_binario.close()
 
-del(fichero_binario)
+del fichero_binario

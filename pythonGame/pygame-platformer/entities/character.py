@@ -10,15 +10,16 @@ constants = Cts()
 
 
 class Character(Entity):
-
     def __init__(self, images):
-        super().__init__(0, 0, images['idle'])
+        super().__init__(0, 0, images["idle"])
 
-        self.image_idle_right = images['idle']
+        self.image_idle_right = images["idle"]
         self.image_idle_left = pygame.transform.flip(self.image_idle_right, True, False)
-        self.images_run_right = images['run']
-        self.images_run_left = [pygame.transform.flip(img, True, False) for img in self.images_run_right]
-        self.image_jump_right = images['jump']
+        self.images_run_right = images["run"]
+        self.images_run_left = [
+            pygame.transform.flip(img, True, False) for img in self.images_run_right
+        ]
+        self.image_jump_right = images["jump"]
         self.image_jump_left = pygame.transform.flip(self.image_jump_right, True, False)
 
         self.running_images = self.images_run_right
@@ -130,7 +131,8 @@ class Character(Entity):
                     self.running_images = self.images_run_left
 
                 self.steps = (
-                                         self.steps + 1) % self.speed  # Works well with 2 images, try lower number if more frames are in animation
+                    self.steps + 1
+                ) % self.speed  # Works well with 2 images, try lower number if more frames are in animation
 
                 if self.steps == 0:
                     self.image_index = (self.image_index + 1) % len(self.running_images)

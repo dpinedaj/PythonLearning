@@ -1,10 +1,10 @@
 class Evens:
     def __init__(self, *args):
-        if len(args)>1:
-            if args[0]%2==0:
+        if len(args) > 1:
+            if args[0] % 2 == 0:
                 self.val = args[0]
             else:
-                self.val = args[0]+1
+                self.val = args[0] + 1
             self.end = args[1]
         else:
             self.val = 0
@@ -22,6 +22,5 @@ class Evens:
             return val
 
 
-for i in Evens(5,21):
+for i in Evens(5, 21):
     print(i)
-

@@ -1,25 +1,18 @@
-
-
 def pickingNumbers(a):
-    maximum=0
+    maximum = 0
     for i in a:
-        c=a.count(i)
-        d=a.count(i-1)
-        c=c+d
+        c = a.count(i)
+        d = a.count(i - 1)
+        c = c + d
         if c > maximum:
-            maximum=c
-    return(maximum)
-	
+            maximum = c
+    return maximum
 
-	
-	
 
-if __name__ == '__main__':
-   
-	n = int(input().strip())
+if __name__ == "__main__":
 
-	a = list(map(int, input().rstrip().split()))
+    n = int(input().strip())
 
-	result = pickingNumbers(a)
+    a = list(map(int, input().rstrip().split()))
 
-	
+    result = pickingNumbers(a)

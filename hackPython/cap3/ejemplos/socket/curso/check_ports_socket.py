@@ -1,6 +1,7 @@
 import socket
 import sys
 
+
 def checkPortSocket(ip, portlist):
     try:
         for port in portlist:
@@ -35,6 +36,7 @@ def testHost(host):
         print("Error de conexion")
         sys.exit()
 
-checkPortSocket('localhost',[80,8080,443])
 
-testHost('www.google.com')
+checkPortSocket("localhost", [80, 8080, 443])
+
+testHost("www.google.com")

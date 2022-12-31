@@ -26,4 +26,4 @@ while processes > 0:
     ability[ability.index(option)] = option // 2
     n += 1
 
-print(n) # 9
+print(n)  # 9

@@ -1,17 +1,17 @@
-valido=False
+valido = False
 
-email=input("Introduce tu email: ")
+email = input("Introduce tu email: ")
 
 for i in range(len(email)):
 
-	if email[i]=="@":
+    if email[i] == "@":
 
-		valido=True
+        valido = True
 
 
 if valido:
 
-	print("Email correcto")
+    print("Email correcto")
 
 else:
-	print("Email incorrecto")
+    print("Email incorrecto")

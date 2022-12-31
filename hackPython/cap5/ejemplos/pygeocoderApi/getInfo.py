@@ -1,5 +1,6 @@
 from pygeocoder import Geocoder
 
+
 class MyGeoCoder:
     @staticmethod
     def get_geocode():

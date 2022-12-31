@@ -14,7 +14,9 @@ Hint: Try preprocessing the dictionary into a more efficient
 data structure to speed up queries.
 """
 
+
 def problem11(prefix: str, pos_strings: list) -> list:
     return [pos for pos in pos_strings if pos.startswith(prefix)]
+
 
 problem11("de", ["dog", "deer", "deal"])

@@ -17,6 +17,7 @@ import unittest
 
 # Singleton Allocator
 
+
 class Database:
     _instance = None
 
@@ -28,12 +29,11 @@ class Database:
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(Database, cls)\
-                .__new__(cls, *args, **kwargs)
+            cls._instance = super(Database, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     d1 = Database()
     d2 = Database()
     print(d1 == d2)
@@ -42,6 +42,7 @@ if __name__ == '__main__':
 # Singleton Decorator
 # This can solve the initializer problem
 
+
 def singleton(class_):
     instances = {}
 
@@ -49,6 +50,7 @@ def singleton(class_):
         if class_ not in instances:
             instances[class_] = class_(*args, **kwargs)
         return instances[class_]
+
     return get_instance
 
 
@@ -58,7 +60,7 @@ class Database:
         print("Loading database")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     d1 = Database()
     d2 = Database()
     print(d1 == d2)
@@ -67,13 +69,13 @@ if __name__ == '__main__':
 # Singleton Metaclass
 # similar implementation than decorator
 
+
 class Singleton(type):
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls)\
-                .__call__(*args, **kwargs)
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
 
@@ -82,7 +84,7 @@ class Database(metaclass=Singleton):
         print("Loading Database")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     d1 = Database()
     d2 = Database()
     print(d1 == d2)
@@ -103,7 +105,7 @@ class CEO:
         return f"{self.name} is {self.age} years old"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ceo1 = CEO()
     print(ceo1)
     ceo2 = CEO()
@@ -123,14 +125,14 @@ class Monostate:
 
 class CFO(Monostate):
     def __init__(self):
-        self.name = ''
+        self.name = ""
         self.money_managed = 0
 
     def __str__(self) -> str:
         return f"{self.name} manages ${self.money_managed}bn"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cfo1 = CFO()
     print(cfo1)
     cfo2 = CFO()
@@ -142,10 +144,11 @@ if __name__ == '__main__':
 
 # Testability
 
+
 class Database(metaclass=Singleton):
     def __init__(self):
         self.population = {}
-        f = open('capitals.txt', 'r')
+        f = open("capitals.txt", "r")
         lines = f.readlines()
         for i in range(0, len(lines), 2):
             self.population[lines[i].strip()] = int(lines[i + 1].strip())
@@ -172,11 +175,7 @@ class ConfigurableRecordFinder:
 
 
 class DummyDatabase:
-    population = {
-        'alpha': 1,
-        'beta': 2,
-        'gamma': 3
-    }
+    population = {"alpha": 1, "beta": 2, "gamma": 3}
 
     def get_population(self, name):
         return self.population[name]
@@ -189,9 +188,9 @@ class SingletonTests(unittest.TestCase):
         self.assertEqual(db, db2)
 
     def test_singleton_total_population(self):
-        """ This tests on a live database :( """
+        """This tests on a live database :("""
         rf = SingletonRecordFinder()
-        names = ['Seoul', 'Mexico City']
+        names = ["Seoul", "Mexico City"]
         tp = rf.total_population(names)
         self.assertEqual(tp, 17500000 + 17400000)  # what if these change?
 
@@ -199,11 +198,8 @@ class SingletonTests(unittest.TestCase):
 
     def test_dependent_total_population(self):
         crf = ConfigurableRecordFinder(self.ddb)
-        self.assertEqual(
-            crf.total_population(['alpha', 'beta']),
-            3
-        )
+        self.assertEqual(crf.total_population(["alpha", "beta"]), 3)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

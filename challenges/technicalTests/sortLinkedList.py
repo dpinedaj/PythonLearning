@@ -3,6 +3,7 @@ class LLNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def solve(self, node):
         if node == None:

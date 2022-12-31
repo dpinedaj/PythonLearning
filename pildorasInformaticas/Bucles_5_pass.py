@@ -1,3 +1,2 @@
 class MiClase:
-	pass
-
+    pass

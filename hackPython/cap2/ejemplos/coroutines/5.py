@@ -1,12 +1,15 @@
 import asyncio
 
+
 async def slow_operation(future):
     await asyncio.sleep(1)
-    future.set_result('Future is done!')
+    future.set_result("Future is done!")
+
 
 def got_result(future):
     print(future.result())
     loop.stop()
+
 
 loop = asyncio.get_event_loop()
 future = asyncio.Future()

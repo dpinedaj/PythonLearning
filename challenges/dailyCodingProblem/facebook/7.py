@@ -20,22 +20,22 @@ CHOICES = [1, 2]
 def problem7(encoded: str) -> str:
     encoded_length: int = len(encoded)
     possibilities: list = []
+
     def loop_sum(acc: list) -> None:
         if sum(acc) == encoded_length:
             possibilities.append(acc)
         elif sum(acc) < encoded_length:
             for val in CHOICES:
                 loop_sum(acc + [val])
-            
+
     loop_sum([])
     print(possibilities)
-    result = [[MAPPING.get(encoded[i:i+val])
-                for i, val in enumerate(pos)] 
-                for pos in possibilities]
+    result = [
+        [MAPPING.get(encoded[i : i + val]) for i, val in enumerate(pos)]
+        for pos in possibilities
+    ]
     return ["".join(res) for res in result if None not in res]
-    
+
 
 test = "1111"
 problem7(test)
-
-

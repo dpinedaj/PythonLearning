@@ -5,6 +5,7 @@ from abc import abstractmethod
 
 # Violate approach
 
+
 class Machine:
     def print(self, document):
         raise NotImplementedError

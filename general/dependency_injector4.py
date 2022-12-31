@@ -12,12 +12,8 @@ class TestModel:
 
     @staticmethod
     def parse(data):
-        return TestModel(
-            a=data["a"],
-            b=data["b"],
-            c=data["c"]
-        )
-        
+        return TestModel(a=data["a"], b=data["b"], c=data["c"])
+
 
 class Container1(containers.DeclarativeContainer):
     config = providers.Configuration()

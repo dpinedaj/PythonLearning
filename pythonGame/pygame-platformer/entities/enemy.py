@@ -64,7 +64,9 @@ class Enemy(Entity):
             self.image = self.current_images[self.image_index]
             self.image_index = (self.image_index + 1) % len(self.current_images)
 
-        self.steps = (self.steps + 1) % 20  # Nothing significant about 20. It just seems to work okay.
+        self.steps = (
+            self.steps + 1
+        ) % 20  # Nothing significant about 20. It just seems to work okay.
 
     def is_near(self, hero):
         return abs(self.rect.x - hero.rect.x) < 2 * constants.WIDTH

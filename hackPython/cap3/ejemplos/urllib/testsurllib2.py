@@ -1,5 +1,6 @@
 import urllib2
 
+
 def prueba():
     response = urllib2.urlopen("dominio")
     response.geturl()
@@ -13,4 +14,4 @@ def prueba():
 
 def pruebaBasuc():
     auth = urllib2.HTTPBasicAuthHandler()
-    auth.add_password(user="guest", password = "passwd", url="dominio")
+    auth.add_password(user="guest", password="passwd", url="dominio")

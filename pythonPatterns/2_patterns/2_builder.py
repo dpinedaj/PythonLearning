@@ -64,14 +64,10 @@ class HtmlBuilder:
         self.__root = HtmlElement(name=root_name)
 
     def add_child(self, child_name, child_text):
-        self.__root.elements.append(
-            HtmlElement(child_name, child_text)
-        )
+        self.__root.elements.append(HtmlElement(child_name, child_text))
 
     def add_child_fluent(self, child_name, child_text):
-        self.__root.elements.append(
-            HtmlElement(child_name, child_text)
-        )
+        self.__root.elements.append(HtmlElement(child_name, child_text))
         return self
 
     def __str__(self):
@@ -87,8 +83,7 @@ print(builder)
 
 # Also can be a fluent interface
 builder = HtmlBuilder("ul")
-builder.add_child_fluent("li", "hello")\
-    .add_child_fluent("li", "world")
+builder.add_child_fluent("li", "hello").add_child_fluent("li", "world")
 print("Fluent Builder:")
 print(builder)
 
@@ -170,13 +165,10 @@ class PersonAddressBuilder(PersonBuilder):
 
 pb = PersonBuilder()
 person = (
-    pb
-    .lives
-    .at("123 London Road")
+    pb.lives.at("123 London Road")
     .in_city("London")
     .with_postcode("SW12BC")
-    .works
-    .at("Fabrikam")
+    .works.at("Fabrikam")
     .as_a("Engineer")
     .earning(123000)
     .build()
@@ -194,8 +186,9 @@ class Person:
         self.date_of_birth = None
 
     def __str__(self) -> str:
-        return f"{self.name} born on {self.date_of_birth} " +\
-            f"works as {self.position}"
+        return (
+            f"{self.name} born on {self.date_of_birth} " + f"works as {self.position}"
+        )
 
     @staticmethod
     def new():
@@ -229,17 +222,12 @@ class PersonBirthDateBuilder(PersonJobBuilder):
 
 
 pb = PersonBirthDateBuilder()
-me = (
-    pb
-    .called("Dimitri")
-    .work_as_a("Engineer")
-    .born("1/1/1980")
-    .build()
-)
+me = pb.called("Dimitri").work_as_a("Engineer").born("1/1/1980").build()
 print(me)
 
 
 # Exercise
+
 
 class Code:
     def __init__(self):
@@ -247,11 +235,7 @@ class Code:
         self.fields = ""
 
     def __str__(self):
-        return (
-            f"class {self.root_name}:"
-            f"\n  def __init__(self):"
-            f"{self.fields}"
-        )
+        return f"class {self.root_name}:" f"\n  def __init__(self):" f"{self.fields}"
 
 
 class CodeBuilder:

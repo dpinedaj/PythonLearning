@@ -27,35 +27,37 @@ from os.path import dirname, join
 from setuptools import setup, find_packages
 
 # Import requirements
-with open(join(dirname(__file__), 'requirements.txt')) as f:
+with open(join(dirname(__file__), "requirements.txt")) as f:
     required = f.read().splitlines()
 
 
 setup(
-    name='prueba1',
-    version='1.0.0',
+    name="prueba1",
+    version="1.0.0",
     install_requires=required,
-    url='sin URL',
-    license='BSD',
-    author='Daniel Pineda',
-    author_email='dpinedaj@hotmail.com',
+    url="sin URL",
+    license="BSD",
+    author="Daniel Pineda",
+    author_email="dpinedaj@hotmail.com",
     packages=find_packages(),
     include_package_data=True,
-    entry_points={'console_scripts': [
-        'prueba1 = prueba1_lib.prueba1:main',
-        ]},
-    description='Creacion prueba1',
-    long_description=open('README.md', "r").read(),
-    classifiers=[
-        'Environment :: Console',
-        'Intended Audience :: System Administrators',
-        'Intended Audience :: Other Audience',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: MacOS',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: POSIX',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 3',
-        'Topic :: Security',
+    entry_points={
+        "console_scripts": [
+            "prueba1 = prueba1_lib.prueba1:main",
         ]
+    },
+    description="Creacion prueba1",
+    long_description=open("README.md", "r").read(),
+    classifiers=[
+        "Environment :: Console",
+        "Intended Audience :: System Administrators",
+        "Intended Audience :: Other Audience",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: MacOS",
+        "Operating System :: Microsoft :: Windows",
+        "Operating System :: POSIX",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+        "Topic :: Security",
+    ],
 )

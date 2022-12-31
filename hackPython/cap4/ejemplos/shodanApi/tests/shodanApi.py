@@ -1,18 +1,20 @@
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from generalSearch import ShodanSearch
 
 
 def test_length(text):
     """
     Function to verify the amount of hosts returned
-    with a specific name or text    
+    with a specific name or text
     """
     sho = ShodanSearch()
     result = sho.search(text)
 
-    print('total results:',result['total'])
+    print("total results:", result["total"])
+
 
 def test_info_host(ip):
     """
@@ -22,9 +24,10 @@ def test_info_host(ip):
     results = sho.info_host(ip)
     if results != None:
         for key, value in results.items():
-            print(key, '-->', value)
+            print(key, "-->", value)
     else:
-        print('No results')
+        print("No results")
+
 
 def test_search_ftp():
     """
@@ -32,13 +35,14 @@ def test_search_ftp():
     """
     sites = list()
     sho = ShodanSearch()
-    result = sho.search('port: 21 Anonymous user logged in')
-    print('host number: ' + str(len(result['matches'])))
-    for match in result['matches']:
-        if match['ip_str'] is not None:
-            print(match['ip_str'])
-            sites.append(match['ip_str'])
+    result = sho.search("port: 21 Anonymous user logged in")
+    print("host number: " + str(len(result["matches"])))
+    for match in result["matches"]:
+        if match["ip_str"] is not None:
+            print(match["ip_str"])
+            sites.append(match["ip_str"])
     return sites
+
 
 def bannerServer():
     """
@@ -49,16 +53,17 @@ def bannerServer():
     """
     import socket
     import argparse
-    parser = argparse.ArgumentParser(description='Obtain banner server')
-    parser.add_argument('-target', dest='target', help='target ip', required=True)
-    parser.add_argument('-port', dest='port', help='port', type=int, required=True)
+
+    parser = argparse.ArgumentParser(description="Obtain banner server")
+    parser.add_argument("-target", dest="target", help="target ip", required=True)
+    parser.add_argument("-port", dest="port", help="port", type=int, required=True)
     parsed_args = parser.parse_args()
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((parsed_args.target, parsed_args.port))
     sock.settimeout(2)
     get = "GET / HTTP/1.1\nHost: {}\n\n".format(parsed_args.target)
-    http_get = bytes(get, 'utf-8')
+    http_get = bytes(get, "utf-8")
     data = " "
     try:
         sock.sendall(http_get)
@@ -71,8 +76,8 @@ def bannerServer():
         sock.close()
 
 
-#test_length('google')
+# test_length('google')
 
-#test_info_host('8.8.8.8')
-#test_search_ftp()
+# test_info_host('8.8.8.8')
+# test_search_ftp()
 bannerServer()

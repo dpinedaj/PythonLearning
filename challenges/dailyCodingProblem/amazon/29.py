@@ -12,17 +12,19 @@ You can assume the string to be encoded have no digits and consists solely of al
 You can assume the string to be decoded is valid.
 """
 
-def problem29(text:str, prev: str="", acc:int=1, final:str="") -> str:
+
+def problem29(text: str, prev: str = "", acc: int = 1, final: str = "") -> str:
     if text == "":
         return final
     else:
         if prev == "":
-          pass  
+            pass
         elif prev == text[0]:
-            problem29(text[1::], text[0], acc+1, final)
+            problem29(text[1::], text[0], acc + 1, final)
         else:
             final = final + str(acc) + prev
             problem29(text[1::], text[0], 1, final)
+
 
 problem29("AAAABBBCCDAA")
 

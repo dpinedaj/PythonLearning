@@ -1,4 +1,3 @@
-
 #
 # Complete the 'nonDivisibleSubset' function below.
 #
@@ -8,19 +7,20 @@
 #  2. INTEGER_ARRAY s
 #
 
+
 def nonDivisibleSubset(k, s):
-    r, o = [0] * k, 0                            # 1
+    r, o = [0] * k, 0  # 1
     for i in s:
-        r[i % k] += 1                            # 2
-    for j in range((k + 2) // 2):                # 3
+        r[i % k] += 1  # 2
+    for j in range((k + 2) // 2):  # 3
         if not j or not k % 2 and j == k // 2:
-            o += r[j] > 0                        # 4
+            o += r[j] > 0  # 4
         else:
-            o += max(r[j], r[k - j])             # 5
-    return(o)
+            o += max(r[j], r[k - j])  # 5
+    return o
 
 
-s = [19, 10, 12, 10, 24, 25, 22 ]
+s = [19, 10, 12, 10, 24, 25, 22]
 k = 4
 
 print(nonDivisibleSubset(k, s))

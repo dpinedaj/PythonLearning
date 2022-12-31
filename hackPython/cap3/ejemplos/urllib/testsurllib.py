@@ -1,9 +1,10 @@
 import urllib
 
-def prueba():
-    proxies = {'http':'http://<direccion_ip>:<Puerto>'}
 
-    print("Using HTTP proxy %s" %proxies['http'])
+def prueba():
+    proxies = {"http": "http://<direccion_ip>:<Puerto>"}
+
+    print("Using HTTP proxy %s" % proxies["http"])
 
     response = urllib.urlopen("http://www.google.com", proxies=proxies)
     response.geturl()
@@ -13,5 +14,6 @@ def prueba():
 
     for header, value in response.headers.items():
         print(header + ":" + value)
+
 
 prueba()

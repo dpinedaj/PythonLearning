@@ -1,5 +1,5 @@
 def merge_the_tools(s, k):
-    strings = [s[i:i+k] for i in range(0, len(s)-k+1, k)]
+    strings = [s[i : i + k] for i in range(0, len(s) - k + 1, k)]
     result = list()
     for i in strings:
         lista = list()
@@ -7,7 +7,7 @@ def merge_the_tools(s, k):
             if j not in lista:
                 lista.append(j)
         result.append("".join(lista))
-    
+
     return result
 
 

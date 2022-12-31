@@ -15,6 +15,7 @@
 
 # Adapter (No caching)
 
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -50,9 +51,11 @@ class LineToPointAdapter(list):
 
     def __init__(self, line):
         self.count += 1
-        print(f'{self.count}: Generating points for line '
-              f'[{line.start.x},{line.start.y}]→'
-              f'[{line.end.x},{line.end.y}]')
+        print(
+            f"{self.count}: Generating points for line "
+            f"[{line.start.x},{line.start.y}]→"
+            f"[{line.end.x},{line.end.y}]"
+        )
 
         left = min(line.start.x, line.end.x)
         right = max(line.start.x, line.end.x)
@@ -68,7 +71,7 @@ class LineToPointAdapter(list):
 
 
 def draw(rcs):
-    print('\n\n--- Drawing some stuff ---\n')
+    print("\n\n--- Drawing some stuff ---\n")
     for rc in rcs:
         for line in rc:
             adapter = LineToPointAdapter(line)
@@ -76,7 +79,7 @@ def draw(rcs):
                 draw_point(p)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     rcs = [
         Rectangle(1, 1, 10, 10),
         Rectangle(3, 3, 6, 6),
@@ -86,6 +89,7 @@ if __name__ == '__main__':
 
 
 # With Caching
+
 
 class LineToPointAdapter:
     count = 0
@@ -98,8 +102,10 @@ class LineToPointAdapter:
 
         super().__init__()
         self.count += 1
-        print(f'{self.count}: Generating points for line ' +
-              f'[{line.start.x},{line.start.y}]→[{line.end.x},{line.end.y}]')
+        print(
+            f"{self.count}: Generating points for line "
+            + f"[{line.start.x},{line.start.y}]→[{line.end.x},{line.end.y}]"
+        )
 
         left = min(line.start.x, line.end.x)
         right = max(line.start.x, line.end.x)
@@ -121,11 +127,8 @@ class LineToPointAdapter:
         return iter(self.cache[self.h])
 
 
-if __name__ == '__main__':
-    rs = [
-        Rectangle(1, 1, 10, 10),
-        Rectangle(3, 3, 6, 6)
-    ]
+if __name__ == "__main__":
+    rs = [Rectangle(1, 1, 10, 10), Rectangle(3, 3, 6, 6)]
 
     draw(rs)
     draw(rs)

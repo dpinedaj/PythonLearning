@@ -1,15 +1,12 @@
 def hurdleRace(k, height):
-    if max(height)>k:
-        return(max(height)-k)
+    if max(height) > k:
+        return max(height) - k
     else:
-        return(0)
+        return 0
 
 
-
-
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     nk = input().split()
 

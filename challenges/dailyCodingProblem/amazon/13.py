@@ -11,12 +11,16 @@ For example, given s = "abcba" and k = 2,
 the longest substring with k distinct characters is "bcb".
 """
 
+
 def problem13(text: str, k: int) -> str:
     text_length: int = len(text)
-    combinations: list = [text[i:j] 
-            for i in range(text_length)
-            for j in range(text_length, -1, -1)
-            if len(set(text[i:j])) == k]
+    combinations: list = [
+        text[i:j]
+        for i in range(text_length)
+        for j in range(text_length, -1, -1)
+        if len(set(text[i:j])) == k
+    ]
     return max(combinations, key=len)
-    
+
+
 problem13("abcba", 2)
